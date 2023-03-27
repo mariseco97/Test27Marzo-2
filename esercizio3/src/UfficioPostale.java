@@ -18,6 +18,29 @@ public class UfficioPostale {
             }
     }
 
+    public Lettera getProssimaLettera() {
+        Lettera primaLettera = null;
+        for (int i = 0; i < lettere.length; i++) {
+            if (lettere[i] != null) {
+                primaLettera = lettere[i];
+                lettere[i] = null;
+                break;
+            }
+        }
+        return primaLettera;
+    }
+
+    public int contaLetterePerDestinatario(String nomeDestinatario, String cognomeDestinatario) {
+        int conteggio = 0;
+        for (Lettera l : lettere) {
+            if (l != null && l.getNomeDestinatario().equals(nomeDestinatario)
+                    && l.getCognomeDestinatario().equals(cognomeDestinatario)) {
+                conteggio++;
+            }
+        }
+        return conteggio;
+    }
+
 
     @Override
     public String toString() {
