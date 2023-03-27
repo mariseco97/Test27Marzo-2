@@ -48,4 +48,5 @@ public class UfficioPostale {
                 "lettere=" + Arrays.toString(lettere) +
                 '}';
     }
+    //ciao
 }
